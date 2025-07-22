@@ -17,12 +17,15 @@ export default defineConfig(({ mode }) => {
       plugins: [
         VitePWA({
           registerType: 'autoUpdate',
-          includeAssets: ['vite.svg'],
+          includeAssets: ['vite.svg', 'icon-192.png', 'icon-512.png'],
           manifest: {
             name: 'TaskFlow AI',
             short_name: 'TaskFlow',
             description: 'An AI-powered task management platform that automatically categorizes and prioritizes tasks to boost productivity.',
             theme_color: '#06b6d4',
+            background_color: '#f3f4f6',
+            display: 'standalone',
+            start_url: '.',
             icons: [
               {
                 src: 'icon-192.png',
