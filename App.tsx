@@ -183,10 +183,7 @@ const App: React.FC = () => {
             />
             <main className="flex-1 flex flex-col bg-gray-100/50 dark:bg-gray-900/50 backdrop-blur-sm overflow-y-auto">
                  <header className="sticky top-0 z-10 bg-gray-100/80 dark:bg-gray-900/80 backdrop-blur-md p-6 border-b border-gray-200 dark:border-gray-800">
-                    <div className="flex items-center gap-4">
-                        <div id="add-task-form" className="flex-1">
-                            <AddTaskForm onAddTask={handleAddTask} isLoading={isLoading} />
-                        </div>
+                    <div className="flex justify-end items-center gap-4 mb-4">
                         <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
                          <button
                             onClick={logout}
@@ -197,6 +194,9 @@ const App: React.FC = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
                             </svg>
                         </button>
+                    </div>
+                    <div id="add-task-form" className="w-full">
+                        <AddTaskForm onAddTask={handleAddTask} isLoading={isLoading} />
                     </div>
                     {error && <p className="text-red-500 dark:text-red-400 text-center mt-2 text-sm">{error}</p>}
                 </header>
